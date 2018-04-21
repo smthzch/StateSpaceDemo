@@ -1,3 +1,4 @@
+library(animation)
 set.seed(5)
 
 #R - obs noise cov
@@ -63,7 +64,9 @@ y = data.frame(z=0, y=0, yh=0, se=100)
 xh = c(0,0)
 S = diag(100,2)
 i = 0
-while(T){
+saveVideo({
+    ani.options(interval=0.05)
+    for(i in 0:1000){
     i = i+1
     z = sin(2*pi*i/500)*2
     yn = z+rnorm(1,0,1)
@@ -81,8 +84,9 @@ while(T){
     lines(y$yh+2*y$se, col="green")
     lines(y$yh-2*y$se, col="blue")
     lines(y=sin(2*pi*((i-500):i)/500)*2,x=(i-500):i)
-    Sys.sleep(.1)
-}
+    ani.pause()
+    }
+}, movie.name="sin_kf.mp4")
 
 
 
