@@ -74,7 +74,7 @@ while(T){
     xh = up$x
     S = up$p
     y = rbind(y, data.frame(z=z, y=yn, yh=xh[1,1], se=S[1,1]))
-    #if(nrow(y)>500)y[-1,]
+    if(nrow(y)>600)y[-(1:100),]
     
     plot(y$y, ylim=c(-3,3), xlim=c(i-500,i))
     lines(y$yh, col="red")
