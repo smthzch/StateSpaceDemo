@@ -10,8 +10,12 @@ kalmanfilter.R demos using a kalman filter to filter a noisy sine wave. The sign
 
 ## HMM
 
-hmm.R demos using a hidden markov model to detect a different drift regimes, as well as different noise regimes.
+hmm.R demos using a hidden markov model to detect a different drift regimes, as well as different noise regimes in brownian motion.
+
+**drift shift**
 
 ![HMM drift regime switch](figs/hmm_meanChange.png)
+
+**variance shift**
 
 ![HMM variance regime switch](figs/hmm_varChange.png)
